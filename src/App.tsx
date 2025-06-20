@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Code, Users, Zap, Mail, Phone, MapPin, ArrowRight, CheckCircle, ExternalLink, Brain, Target, TrendingUp, Shield, Lightbulb, Settings, Moon, Sun } from 'lucide-react';
 import AcrLogo from './assets/Grayscale Transparent.svg'; // Import the logo
+import FacebookCoverImage from './assets/Facebook Cover Image.png'; // Import the banner image
+import FooterLogo from './assets/Grayscale Transparent.svg'; // Import footer logo variant
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -673,7 +675,7 @@ function App() {
           <div className="w-full flex justify-center px-4 sm:px-6 lg:px-8 pt-16 pb-8">
             <div className="w-2/3 max-w-4xl">
               <img 
-                src="/src/assets/Facebook Cover Image.png" 
+                src={FacebookCoverImage} 
                 alt="ACR LABS - Software Development & AI Transformation" 
                 className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
               />
@@ -1091,7 +1093,7 @@ function App() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <div className="flex items-center justify-center mb-0">
-                <img src="/src/assets/Grayscale Transparent.svg" alt="ACR LABS" className="h-64 w-auto filter brightness-0 invert" />
+                <img src={FooterLogo} alt="ACR LABS" className="h-64 w-auto filter brightness-0 invert" />
               </div>
               <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
                 Accelerating business transformation through innovative software development and strategic AI consulting. Partner with us to build the future of your industry.
