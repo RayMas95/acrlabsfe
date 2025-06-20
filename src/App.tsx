@@ -111,7 +111,6 @@ function App() {
   const NextGenRetailCaseStudy = () => (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Case Study: NextGen Retail Solutions</h2>
         <div className="bg-gradient-to-r from-emerald-100 to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/30 rounded-lg p-4">
           <p className="text-emerald-800 dark:text-emerald-300 font-semibold">
             Client: MidWest Commerce Co. (Regional Retail Chain)
@@ -206,7 +205,6 @@ function App() {
   const ManufacturingAICaseStudy = () => (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Case Study: Manufacturing AI Transformation</h2>
         <div className="bg-gradient-to-r from-cyan-100 to-blue-100 dark:from-cyan-900/30 dark:to-blue-900/30 rounded-lg p-4">
           <p className="text-cyan-800 dark:text-cyan-300 font-semibold">
             Client: Precision Parts Manufacturing (150-employee manufacturer)
@@ -312,7 +310,6 @@ function App() {
   const HealthcareAICaseStudy = () => (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Case Study: Healthcare AI Integration</h2>
         <div className="bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-lg p-4">
           <p className="text-blue-800 dark:text-blue-300 font-semibold">
             Client: Regional Health Network (5 hospitals, 12 clinics)
@@ -431,10 +428,9 @@ function App() {
   const StaySuitelyCaseStudy = () => (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Case Study: StaySuitely</h2>
         <div className="bg-gradient-to-r from-emerald-100 to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/30 rounded-lg p-4">
           <p className="text-emerald-800 dark:text-emerald-300 font-semibold">
-            Client: Boutique Hotel Group (12 properties across 4 states)
+            Client: StaySuitely Hotel Bookings (50+ hotels across the US)
           </p>
         </div>
       </div>
@@ -568,13 +564,13 @@ function App() {
 
   const renderCaseStudy = () => {
     switch (selectedCaseStudy) {
-      case 'NextGen Retail Solutions':
+      case 'Real Time Analytics & Intelligent Customer Segmentation':
         return <NextGenRetailCaseStudy />;
       case 'Manufacturing AI Transformation':
         return <ManufacturingAICaseStudy />;
       case 'Healthcare AI Integration':
         return <HealthcareAICaseStudy />;
-      case 'StaySuitely':
+      case 'A Modern Loyalty Program with Gamified Rewards':
         return <StaySuitelyCaseStudy />;
       default:
         return null;
@@ -591,8 +587,8 @@ function App() {
               {/* Title - Aligned Left */} 
               <div className="flex items-start flex-shrink-0">
                 <div className="relative flex-shrink-0">
-                  <img src={AcrLogo} alt="ACR LABS Logo" className="h-12 w-auto absolute -top-[6px] -left-16 z-10" />
-                  <span className="text-xl font-bold text-gray-900 dark:text-white pl-6">ACR LABS</span>
+                  <img src={AcrLogo} alt="ACR LABS Logo" className="h-12 w-auto absolute -top-[6px] -left-12 z-10" />
+                  <span className="text-xl font-bold text-gray-900 dark:text-white pl-14">ACR LABS</span>
                 </div>
               </div>
 
@@ -844,7 +840,7 @@ function App() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">NextGen Retail Solutions</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Real Time Analytics & Intelligent Customer Segmentation</h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
                     A comprehensive e-commerce platform that increased client sales by 340% and streamlined operations with advanced inventory management and real-time analytics capabilities, featuring automated workflows and intelligent customer segmentation.
                   </p>
@@ -854,7 +850,7 @@ function App() {
                     <span className="px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 rounded-full text-sm">PostgreSQL</span>
                   </div>
                   <button 
-                    onClick={() => handleCaseStudyClick('NextGen Retail Solutions')}
+                    onClick={() => handleCaseStudyClick('Real Time Analytics & Intelligent Customer Segmentation')}
                     className="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-semibold hover:text-emerald-700 dark:hover:text-emerald-300"
                   >
                     View Case Study
@@ -871,9 +867,9 @@ function App() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">StaySuitely</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">A Modern Loyalty Program with Gamified Rewards</h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    An innovative booking platform featuring a novel ACR Labs-designed loyalty program with a gamified rewards system connected to blockchain technology for enhanced user engagement and transparent reward distribution.
+                    An innovative booking platform featuring a novel ACR Labs-designed loyalty program with a gamified rewards system connected to the blockchain for enhanced user engagement and transparent rewards distribution across multiple hotel properties.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     <span className="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-full text-sm">React</span>
@@ -881,7 +877,7 @@ function App() {
                     <span className="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 rounded-full text-sm">Blockchain</span>
                   </div>
                   <button 
-                    onClick={() => handleCaseStudyClick('StaySuitely')}
+                    onClick={() => handleCaseStudyClick('A Modern Loyalty Program with Gamified Rewards')}
                     className="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-semibold hover:text-emerald-700 dark:hover:text-emerald-300"
                   >
                     View Case Study
