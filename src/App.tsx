@@ -1095,7 +1095,7 @@ function App() {
         <footer className="bg-gray-900 dark:bg-gray-950 text-white py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <div className="flex items-center justify-center mb-2">
+              <div className="flex items-center justify-center mb-6">
                 <img src="/src/assets/Grayscale Transparent.svg" alt="ACR LABS" className="h-48 w-auto filter brightness-0 invert" />
               </div>
               <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
