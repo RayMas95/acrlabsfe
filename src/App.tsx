@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Code, Users, Zap, Mail, Phone, MapPin, ArrowRight, CheckCircle, ExternalLink, Brain, Target, TrendingUp, Shield, Lightbulb, Settings, Moon, Sun } from 'lucide-react';
-import AcrLogo from './assets/Grayscale Transparent.svg'; // Import the logo
+import AcrLogoDark from './assets/1286320889841993923.png'; // Import the dark mode logo
+import AcrLogoLight from './assets/5552879644133232083.png'; // Import the light mode logo
 import FacebookCoverImage from './assets/Facebook Cover Image.png'; // Import the banner image
 import FooterLogo from './assets/Grayscale Transparent.svg'; // Import footer logo variant
 
@@ -587,8 +588,8 @@ function App() {
               {/* Title - Aligned Left */} 
               <div className="flex items-start flex-shrink-0">
                 <div className="relative flex-shrink-0">
-                  <img src={AcrLogo} alt="ACR LABS Logo" className="h-12 w-auto absolute -top-[6px] -left-12 z-10" />
-                  <span className="text-xl font-bold text-gray-900 dark:text-white pl-14">ACR LABS</span>
+                  <img src={isDarkMode ? AcrLogoDark : AcrLogoLight} alt="ACR LABS Logo" className="h-12 w-auto absolute -top-[10px] left-1 z-10" />
+                  <span className="text-xl font-bold text-gray-900 dark:text-white pl-16">ACR LABS</span>
                 </div>
               </div>
 
