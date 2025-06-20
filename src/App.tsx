@@ -588,7 +588,10 @@ function App() {
             <div className="flex items-center h-16">
               {/* Title - Aligned Left */} 
               <div className="flex items-start flex-shrink-0">
-                <span className="text-xl font-bold text-gray-900 dark:text-white">ACR LABS</span>
+                <div className="relative flex-shrink-0">
+                  <img src={AcrLogo} alt="ACR LABS Logo" className="h-12 w-auto absolute -top-[6px] -left-16 z-10" />
+                  <span className="text-xl font-bold text-gray-900 dark:text-white pl-6">ACR LABS</span>
+                </div>
               </div>
 
               {/* Spacer to push content to the right */} 
@@ -1087,8 +1090,8 @@ function App() {
         <footer className="bg-gray-900 dark:bg-gray-950 text-white py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <div className="flex items-center justify-center mb-6">
-                <img src="/src/assets/Grayscale Transparent.svg" alt="ACR LABS" className="h-48 w-auto filter brightness-0 invert" />
+              <div className="flex items-center justify-center mb-0">
+                <img src="/src/assets/Grayscale Transparent.svg" alt="ACR LABS" className="h-64 w-auto filter brightness-0 invert" />
               </div>
               <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
                 Accelerating business transformation through innovative software development and strategic AI consulting. Partner with us to build the future of your industry.
