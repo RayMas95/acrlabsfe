@@ -590,54 +590,57 @@ function App() {
                 <span className="text-xl font-bold text-gray-900 dark:text-white">ACR LABS</span>
               </div>
               
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center space-x-4">
-                <div className="flex items-baseline space-x-4">
-                  {[
-                    { id: 'home', label: 'Home' },
-                    { id: 'about', label: 'Services' },
-                    { id: 'portfolio', label: 'Portfolio' },
-                    { id: 'contact', label: 'Contact' }
-                  ].map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => scrollToSection(item.id)}
-                      className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                        activeSection === item.id
-                          ? 'text-emerald-600 bg-emerald-50 dark:text-emerald-400 dark:bg-emerald-900/20'
-                          : 'text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800'
-                      }`}
-                    >
-                      {item.label}
-                    </button>
-                  ))}
+              {/* Wrapper for right-aligned items */}
+              <div className="flex items-center">
+                {/* Desktop Navigation */}
+                <div className="hidden md:flex items-center space-x-4">
+                  <div className="flex items-baseline space-x-4">
+                    {[
+                      { id: 'home', label: 'Home' },
+                      { id: 'about', label: 'Services' },
+                      { id: 'portfolio', label: 'Portfolio' },
+                      { id: 'contact', label: 'Contact' }
+                    ].map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => scrollToSection(item.id)}
+                        className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                          activeSection === item.id
+                            ? 'text-emerald-600 bg-emerald-50 dark:text-emerald-400 dark:bg-emerald-900/20'
+                            : 'text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+                  
+                  {/* Dark Mode Toggle (Desktop) */}
+                  <button
+                    onClick={() => setIsDarkMode(!isDarkMode)}
+                    className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    aria-label="Toggle dark mode"
+                  >
+                    {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+                  </button>
                 </div>
-                
-                {/* Dark Mode Toggle */}
-                <button
-                  onClick={() => setIsDarkMode(!isDarkMode)}
-                  className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                  aria-label="Toggle dark mode"
-                >
-                  {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-                </button>
-              </div>
 
-              {/* Mobile menu button */}
-              <div className="md:hidden flex items-center space-x-2">
-                <button
-                  onClick={() => setIsDarkMode(!isDarkMode)}
-                  className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                  aria-label="Toggle dark mode"
-                >
-                  {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-                </button>
-                <button
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                >
-                  {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
+                {/* Mobile menu button & Theme Toggle (Mobile) */}
+                <div className="md:hidden flex items-center space-x-2">
+                  <button
+                    onClick={() => setIsDarkMode(!isDarkMode)}
+                    className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    aria-label="Toggle dark mode"
+                  >
+                    {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+                  </button>
+                  <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  >
+                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
