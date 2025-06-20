@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Code, Users, Zap, Mail, Phone, MapPin, ArrowRight, CheckCircle, ExternalLink, Brain, Target, TrendingUp, Shield, Lightbulb, Settings, Moon, Sun } from 'lucide-react';
+import AcrLogo from './assets/Grayscale Transparent.svg'; // Import the logo
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -584,63 +585,54 @@ function App() {
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800 z-50 transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              <div className="flex-shrink-0 flex items-center space-x-3">
-                <img src="/src/assets/Grayscale Transparent.svg" alt="ACR LABS Logo" className="h-8 w-auto" />
+            <div className="flex items-center h-16">
+              {/* Title - Aligned Left */} 
+              <div className="flex items-start flex-shrink-0">
                 <span className="text-xl font-bold text-gray-900 dark:text-white">ACR LABS</span>
               </div>
-              
-              {/* Wrapper for right-aligned items */}
-              <div className="flex items-center">
-                {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center space-x-4">
-                  <div className="flex items-baseline space-x-4">
-                    {[
-                      { id: 'home', label: 'Home' },
-                      { id: 'about', label: 'Services' },
-                      { id: 'portfolio', label: 'Portfolio' },
-                      { id: 'contact', label: 'Contact' }
-                    ].map((item) => (
-                      <button
-                        key={item.id}
-                        onClick={() => scrollToSection(item.id)}
-                        className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                          activeSection === item.id
-                            ? 'text-emerald-600 bg-emerald-50 dark:text-emerald-400 dark:bg-emerald-900/20'
-                            : 'text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800'
-                        }`}
-                      >
-                        {item.label}
-                      </button>
-                    ))}
-                  </div>
-                  
-                  {/* Dark Mode Toggle (Desktop) */}
-                  <button
-                    onClick={() => setIsDarkMode(!isDarkMode)}
-                    className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                    aria-label="Toggle dark mode"
-                  >
-                    {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-                  </button>
-                </div>
 
-                {/* Mobile menu button & Theme Toggle (Mobile) */}
-                <div className="md:hidden flex items-center space-x-2">
-                  <button
-                    onClick={() => setIsDarkMode(!isDarkMode)}
-                    className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                    aria-label="Toggle dark mode"
-                  >
-                    {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-                  </button>
-                  <button
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                  >
-                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                  </button>
+              {/* Spacer to push content to the right */} 
+              <div className="flex-grow"></div>
+
+              {/* Desktop Navigation Links, Theme Toggle and Mobile Menu Button - Aligned Right */} 
+              <div className="flex items-center space-x-2 flex-shrink-0">
+                {/* Desktop Navigation Links */} 
+                <div className="hidden md:flex items-center space-x-1">
+                  {[ 
+                    { id: 'home', label: 'Home' },
+                    { id: 'about', label: 'Services' }, // Assuming 'about' is 'services'
+                    { id: 'portfolio', label: 'Portfolio' },
+                    { id: 'contact', label: 'Contact' },
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                        activeSection === item.id
+                          ? 'text-emerald-600 bg-emerald-50 dark:text-emerald-400 dark:bg-emerald-900/20'
+                          : 'text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
                 </div>
+                
+                {/* Theme Toggle and Mobile Menu Button */} 
+                <button
+                  onClick={() => setIsDarkMode(!isDarkMode)}
+                  className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                  aria-label="Toggle dark mode"
+                >
+                  {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+                </button>
+                {/* Mobile menu button - hidden on medium screens and up */} 
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                >
+                  {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
               </div>
             </div>
           </div>
@@ -699,7 +691,7 @@ function App() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-                We partner with forward-thinking companies to build custom software solutions and guide comprehensive AI transformation journeys that drive measurable business outcomes and competitive advantage.
+                We partner with forward-thinking companies to build custom software solutions and guide comprehensive AI transformation journeys that drive measurable business outcomes and sustainable competitive advantage.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
@@ -849,7 +841,7 @@ function App() {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">NextGen Retail Solutions</h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    A comprehensive e-commerce platform that increased client sales by 340% and streamlined operations with advanced inventory management and analytics capabilities.
+                    A comprehensive e-commerce platform that increased client sales by 340% and streamlined operations with advanced inventory management and real-time analytics capabilities, featuring automated workflows and intelligent customer segmentation.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     <span className="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-full text-sm">React</span>
